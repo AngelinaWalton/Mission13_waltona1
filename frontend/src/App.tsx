@@ -3,10 +3,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import TopBanner from "./pages/Home";
-import MovieList from "./pages/Movie";
+import MovieList from "./pages/MoviePage";
 import Home from "./pages/Home";
 import Header from "./pages/Podcast";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import MovieTable from "./movie/MovieList";
 
 // class Welcome extends React.Component {
 //   render() {
@@ -76,7 +77,7 @@ class App extends Component {
               </Link>
               <br></br>
               <Link
-                to="/Movie"
+                to="/MovieList"
                 style={{ color: "black" }}
               >
                 Movie List
@@ -96,8 +97,8 @@ class App extends Component {
               element={<Home />}
             ></Route>
             <Route
-              path="/Movie"
-              element={<MovieList />}
+              path="/MovieList"
+              element={<MovieTable />}
             ></Route>
             <Route
               path="/Podcast"
