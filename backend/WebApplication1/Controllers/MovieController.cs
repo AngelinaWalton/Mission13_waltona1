@@ -15,7 +15,9 @@ namespace WebApplication1.Controllers
         }
         public IEnumerable<Movie> Get()
         {
-            var x = context.Movies.ToArray();
+            var x = context.Movies.ToArray()
+                .Where(p => (p.Edited == "Yes"))
+                .OrderBy(p => p.Title);
             return x;
         }
 
